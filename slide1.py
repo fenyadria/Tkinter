@@ -15,3 +15,9 @@ class Slide1(Frame):
                                     bg="#5B2C2C", fg="white",
                                     activebackground="#0059b3", activeforeground="white",
                                     padx=20, pady=10, borderwidth=0, relief="flat")
+        self.tombol_ke_slide3 = Button(self, text="Project UAS",
+                                       command=lambda: controller.show_slide("Slide3"),
+                                       font=("Algerian", 15, "bold"),
+                                       bg="#5B2C2C", fg="white",
+                                       activebackground="#0059b3", activeforeground="white",
+                                       padx=20, pady=10, borderwidth=0, relief="flat")
