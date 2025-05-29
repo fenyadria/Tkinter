@@ -28,3 +28,12 @@ class Slide1(Frame):
         self.tombol_ke_slide3.bind("<Enter>", lambda e: self.tombol_ke_slide3.config(bg="#02080e"))
         self.tombol_ke_slide3.bind("<Leave>", lambda e: self.tombol_ke_slide3.config(bg="#5B2C2C"))
 
+        self.tombol_lanjut_id = None
+        self.tombol_ke_slide3_id = None
+
+        self.floating_text1 = None
+        self.floating_text2 = None
+        self.float_offset = 0
+        self.float_direction = 1    
+
+    def resize_background(self, event):
