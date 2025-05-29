@@ -13,6 +13,17 @@ class AplikasiTkinter:
     self.container.pack(expand=True, fill="both")
     self.slides = {}
 
+    for S in (Slide1, Slide2, Slide3):
+            name = S._name_
+            frame = S(parent=self.container, controller=self)
+            self.slides[name] = frame
+            frame.grid(row=0, column=0, sticky="nsew")
+
+        self.show_slide("Slide1")
+
+    def show_slide(self, name):
+        self.slides[name].tkraise()
+
 if __name__ == "__main__":
   root = Tk()
   app = AplikasiTkinter(root)
