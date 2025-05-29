@@ -21,3 +21,10 @@ class Slide1(Frame):
                                        bg="#5B2C2C", fg="white",
                                        activebackground="#0059b3", activeforeground="white",
                                        padx=20, pady=10, borderwidth=0, relief="flat")
+
+        self.tombol_lanjut.bind("<Enter>", lambda e: self.tombol_lanjut.config(bg="#090909"))
+        self.tombol_lanjut.bind("<Leave>", lambda e: self.tombol_lanjut.config(bg="#5B2C2C"))
+
+        self.tombol_ke_slide3.bind("<Enter>", lambda e: self.tombol_ke_slide3.config(bg="#02080e"))
+        self.tombol_ke_slide3.bind("<Leave>", lambda e: self.tombol_ke_slide3.config(bg="#5B2C2C"))
+
