@@ -34,6 +34,4 @@ class Slide1(Frame):
         self.floating_text1 = None
         self.floating_text2 = None
         self.float_offset = 0
-        self.float_direction = 1    
-
-    def resize_background(self, event):
+        self.float_direction = 1
