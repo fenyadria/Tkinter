@@ -13,7 +13,7 @@ class AplikasiTkinter:
     self.container.pack(expand=True, fill="both")
     self.slides = {}
 
-    for S in (Slide1, Slide2, Slide3):
+    for S in (Slide1, Slide2):
             name = S._name_
             frame = S(parent=self.container, controller=self)
             self.slides[name] = frame
