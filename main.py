@@ -19,7 +19,7 @@ class AplikasiTkinter:
             self.slides[name] = frame
             frame.grid(row=0, column=0, sticky="nsew")
 
-        self.show_slide("Slide1")
+    self.show_slide("Slide1")
 
     def show_slide(self, name):
         self.slides[name].tkraise()
