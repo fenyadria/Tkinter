@@ -14,7 +14,7 @@ class AplikasiTkinter:
     self.slides = {}
 
     for S in (Slide1, Slide2):
-            name = S._name_
+            name = S.__name__
             frame = S(parent=self.container, controller=self)
             self.slides[name] = frame
             frame.grid(row=0, column=0, sticky="nsew")
