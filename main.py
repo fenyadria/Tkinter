@@ -22,7 +22,7 @@ class AplikasiTkinter:
     self.show_slide("Slide1")
 
   def show_slide(self, name):
-        self.slides[name].tkraise()
+    self.slides[name].tkraise()
 
 if __name__ == "__main__":
   root = Tk()
