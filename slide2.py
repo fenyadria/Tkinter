@@ -1,3 +1,6 @@
+from tkinter import Frame, Label, Button
+from PIL import Image, ImageTk
+
 class Slide2(Frame):
     def __init__(self, parent, controller):
         super().__init__(parent)
