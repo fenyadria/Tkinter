@@ -49,7 +49,7 @@ def resize_background(self, event):
             self.canvas.delete("all")
             self.canvas.create_image(0, 0, image=self.bg, anchor="nw")
 
-            self.floating_text1_outline_ids, self.floating_text1 = create_text_with_outline(
+            self.floating_text1_outline_ids, self.floating_text1 = garis_pinggir_teks(
             self.canvas, self.center_x, self.center_y - 60,
             "WELCOME",
             ("Old English Text MT", 120, "bold"),
@@ -58,7 +58,7 @@ def resize_background(self, event):
             outline_width=2
     )
 
-            self.floating_text2_outline_ids, self.floating_text2 = create_text_with_outline(
+            self.floating_text2_outline_ids, self.floating_text2 = garis_pinggir_teks(
             self.canvas, self.center_x, self.center_y + 60,
             "Project Kelompok 9",
             ("Magneto", 50, "bold"),
