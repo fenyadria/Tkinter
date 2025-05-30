@@ -40,7 +40,7 @@ class Slide1(Frame):
         self.float_offset = 0
         self.float_direction = 1
 
-def resize_background(self, event):
+    def resize_background(self, event):
         resized = self.original_image.resize((event.width, event.height), Image.Resampling.LANCZOS)
         self.bg = ImageTk.PhotoImage(resized)
 
