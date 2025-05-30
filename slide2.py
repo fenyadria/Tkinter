@@ -10,4 +10,33 @@ class Slide2(Frame):
         
         team_frame = Frame(self, bg="white")
         team_frame.pack(pady=20)
+        
+        self.images = []
+        nama = ["Arkhan Al Hakim", "Feny Adria Marshela", "Kamila Putri Hasan", "Sakinah"]
+        npm = [2417053002, 2417051010, 2417051026, 2417050000]
+        files = ["ARKAN.jpg", "paspotopeni.jpg", "PASPOTO_Kamila Putri Hasan.jpg", "SAKINA.jpg"]
+
+        for i in range(4):
+            member = Frame(team_frame, bg="white")
+            member.pack(side="left", padx=15)
+
+            try:
+                img = Image.open(files[i]).resize((200, 300))
+                photo = ImageTk.PhotoImage(img)
+                self.images.append(photo)
+
+                lbl_img = Label(member, image=photo, bg="white")
+                lbl_img.pack()
+
+            except Exception as e:
+                print(f"Failed to load {files[i]}: {e}")
+                lbl_img = Label(member, text="(No image)", bg="white")
+                lbl_img.pack()
+
+            lbl_name = Label(member, text=nama[i], font=("Helvetica", 12, "bold"), bg="white")
+            lbl_name.pack(pady=5)
+            
+            lbl_npm = Label(member, text=npm[i], font=("Helvetica", 10, "bold"), bg="white")
+            lbl_npm.pack(pady=5)
+
 
