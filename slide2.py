@@ -4,13 +4,13 @@ class Slide2(Frame):
     
         self.controller = controller
         self.configure(bg="white")
-        
+
         title = Label(self, text="DISUSUN OLEH", font=("Segoa UI", 50, "bold"), fg="black", bg="white")
         title.pack(pady=20)
-        
+
         team_frame = Frame(self, bg="white")
         team_frame.pack(pady=20)
-        
+
         self.images = []
         nama = ["Arkhan Al Hakim", "Feny Adria Marshela", "Kamila Putri Hasan", "Sakinah"]
         npm = [2417053002, 2417051010, 2417051026, 2417050000]
@@ -36,6 +36,9 @@ class Slide2(Frame):
             lbl_name = Label(member, text=nama[i], font=("Helvetica", 12, "bold"), bg="white")
             lbl_name.pack(pady=5)
             
+            lbl_npm = Label(member, text=npm[i], font=("Helvetica", 10, "bold"), bg="white")
+            lbl_npm.pack(pady=5)
+
         nav_frame = Frame(self, bg="white")
         nav_frame.pack(pady=30)
 
@@ -44,7 +47,3 @@ class Slide2(Frame):
 
         btn_lanjut = Button(nav_frame, text="Lanjut", command=lambda: controller.show_slide("Slide3"))
         btn_lanjut.pack(side="left", padx=20)
-            lbl_npm = Label(member, text=npm[i], font=("Helvetica", 10, "bold"), bg="white")
-            lbl_npm.pack(pady=5)
-
-
