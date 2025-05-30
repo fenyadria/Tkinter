@@ -21,7 +21,7 @@ class AplikasiTkinter:
 
     self.show_slide("Slide1")
 
-    def show_slide(self, name):
+  def show_slide(self, name):
         self.slides[name].tkraise()
 
 if __name__ == "__main__":
