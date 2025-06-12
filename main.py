@@ -1,6 +1,7 @@
 from tkinter import Tk, Frame
 from slide1 import Slide1
 from slide2 import Slide2
+from slide3 import Slide3
 
 class AplikasiTkinter:
   def __init__(self, root):
@@ -13,7 +14,7 @@ class AplikasiTkinter:
     self.container.pack(expand=True, fill="both")
     self.slides = {}
 
-    for S in (Slide1, Slide2):
+    for S in (Slide1, Slide2, Slide3):
             name = S.__name__
             frame = S(parent=self.container, controller=self)
             self.slides[name] = frame
