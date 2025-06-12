@@ -45,8 +45,25 @@ class Slide2(Frame):
         nav_frame = Frame(self, bg="white")
         nav_frame.pack(pady=30)
 
-        btn_kembali = Button(nav_frame, text="Kembali", command=lambda: controller.show_slide("Slide1"))
+        btn_kembali = Button(nav_frame, text="Kembali",
+                             command=lambda: controller.show_slide("Slide1"),
+                             font=("Algerian", 15, "bold"),
+                             bg="#5B2C2C", fg="white",
+                             activebackground="#0059b3", activeforeground="white",
+                             padx=20, pady=10, borderwidth=0, relief="flat")
         btn_kembali.pack(side="left", padx=20)
 
-        btn_lanjut = Button(nav_frame, text="Lanjut", command=lambda: controller.show_slide("Slide3"))
+        btn_lanjut = Button(nav_frame, text="Project UAS",
+                            command=lambda: controller.show_slide("Slide3"),
+                            font=("Algerian", 15, "bold"),
+                            bg="#5B2C2C", fg="white",
+                            activebackground="#0059b3", activeforeground="white",
+                            padx=20, pady=10, borderwidth=0, relief="flat")
         btn_lanjut.pack(side="left", padx=20)
+
+        btn_kembali.bind("<Enter>", lambda e: btn_kembali.config(bg="#090909"))
+        btn_kembali.bind("<Leave>", lambda e: btn_kembali.config(bg="#5B2C2C"))
+
+        btn_lanjut.bind("<Enter>", lambda e: btn_lanjut.config(bg="#02080e"))
+        btn_lanjut.bind("<Leave>", lambda e: btn_lanjut.config(bg="#5B2C2C"))
+
