@@ -16,7 +16,7 @@ class Slide2(Frame):
 
         self.images = []
         nama = ["Arkhan Al Hakim", "Feny Adria Marshela", "Kamila Putri Hasan", "Sakinah"]
-        npm = [2417053002, 2417051010, 2417051026, 2417050000]
+        npm = [2417053002, 2417051010, 2417051026, 2417051024]
         files = ["fotoarkhan.png", "fotofeny.png", "fotokamila.png", "fotosakinah.png"]
 
         for i in range(4):
