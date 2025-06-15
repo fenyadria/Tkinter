@@ -118,7 +118,7 @@ class Slide3(Frame):
             self.ao_timer_label.place_forget()
             self.aka_timer_label.place_forget()
 
-    def save_to_csv(self):
+    def save_to_csv(self, keterangan=""):
         with open('skor.csv', mode='a', newline='') as file:
             writer = csv.writer(file)
             now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -128,12 +128,15 @@ class Slide3(Frame):
                 self.aka_name.get(),
                 self.divisi_entry.get(),
                 self.blue_score.get(),
-                self.red_score.get()
-            ])
+                self.red_score.get(),
+                keterangan
+                ])
 
     def done(self):
         self.save_to_csv()
         messagebox.showinfo("Done", "Pertandingan selesai!")
+        self.reset
+      
 
     def reset(self):
         self.blue_score.set("0")
@@ -146,21 +149,28 @@ class Slide3(Frame):
     
     def shikakku_blue(self):
         ao = self.ao_name.get()
+        self.save_to_csv(keterangan=f"Tim {ao} didiskualifikasi (Shikakku Blue)")
         messagebox.showinfo("Diskualifikasi", f"Pertandingan selesai, tim {ao} didiskualifikasi!")
+        self.reset()
 
     def kikken_blue(self):
         aka = self.aka_name.get()
+        self.save_to_csv(keterangan=f"Tim {aka} menang WO (Kikken Blue)")
         messagebox.showinfo("Menang WO", f"Pertandingan selesai, dimenangkan oleh tim {aka}!")
+        self.reset()
 
     def shikakku_red(self):
         aka = self.aka_name.get()
+        self.save_to_csv(keterangan=f"Tim {aka} didiskualifikasi (Shikakku Red)")
         messagebox.showinfo("Diskualifikasi", f"Pertandingan selesai, tim {aka} didiskualifikasi!")
+        self.reset()
 
     def kikken_red(self):
         ao = self.ao_name.get()
+        self.save_to_csv(keterangan=f"Tim {ao} menang WO (Kikken Red)")
         messagebox.showinfo("Menang WO", f"Pertandingan selesai, dimenangkan oleh tim {ao}!")
+        self.reset()
 
-    
     def increment_blue(self):
         score = int(self.blue_score.get()) + 1
         self.blue_score.set(str(score))
