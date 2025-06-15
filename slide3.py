@@ -17,17 +17,14 @@ class Slide3(Frame):
 
     Label(self.subframe3, text="Ao", fg='blue', bg='black', font=('Arial', 16, 'bold')).place(x=30, y=30)
     self.ao_name = Entry(self.subframe3, width=15)
-    self.ao_name.insert(0, "input")
     self.ao_name.place(x=70, y=35)
 
     Label(self.subframe3, text="Divisi :", fg='white', bg='black', font=('Arial', 16)).place(x=700, y=30)
     self.divisi_entry = Entry(self.subframe3, width=15)
-    self.divisi_entry.insert(0, "input")
     self.divisi_entry.place(x=775, y=35)
 
     Label(self.subframe3, text="Aka", fg='red', bg='black', font=('Arial', 16, 'bold')).place(x=1250, y=30)
     self.aka_name = Entry(self.subframe3, width=15)
-    self.aka_name.insert(0, "input")
     self.aka_name.place(x=1300, y=35)
 
     Button(self.subframe3, text="Kembali", bg='darkred', fg='white',
@@ -105,7 +102,77 @@ class Slide3(Frame):
         self.done()
 
     def start_timer(self):
+      if not self.ao_name.get().strip() or not self.aka_name.get().strip() or not self.divisi_entry.get().strip():
+            messagebox.showwarning("Peringatan", "Harap isi nama Tim Ao, Tim Aka, dan Divisi terlebih dahulu!")
+            return
       if not self.running:
             self.running = True
             self.countdown(self.time_left)
 
+    def toggle_stopwatch(self):
+        self.stopwatch_visible = not self.stopwatch_visible
+        if self.stopwatch_visible:
+            self.ao_timer_label.place(x=500, y=425)
+            self.aka_timer_label.place(x=490, y=425)
+        else:
+            self.ao_timer_label.place_forget()
+            self.aka_timer_label.place_forget()
+
+    def save_to_csv(self):
+        with open('skor.csv', mode='a', newline='') as file:
+            writer = csv.writer(file)
+            now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            writer.writerow([
+                now,
+                self.ao_name.get(),
+                self.aka_name.get(),
+                self.divisi_entry.get(),
+                self.blue_score.get(),
+                self.red_score.get()
+            ])
+
+    def done(self):
+        self.save_to_csv()
+        messagebox.showinfo("Done", "Pertandingan selesai!")
+
+    def reset(self):
+        self.blue_score.set("0")
+        self.red_score.set("0")
+        self.time_left = 60
+        self.running = False
+        self.ao_timer_label.config(text="1:00")
+        self.aka_timer_label.config(text="1:00")
+
+    
+    def shikakku_blue(self):
+        ao = self.ao_name.get()
+        messagebox.showinfo("Diskualifikasi", f"Pertandingan selesai, tim {ao} didiskualifikasi!")
+
+    def kikken_blue(self):
+        aka = self.aka_name.get()
+        messagebox.showinfo("Menang WO", f"Pertandingan selesai, dimenangkan oleh tim {aka}!")
+
+    def shikakku_red(self):
+        aka = self.aka_name.get()
+        messagebox.showinfo("Diskualifikasi", f"Pertandingan selesai, tim {aka} didiskualifikasi!")
+
+    def kikken_red(self):
+        ao = self.ao_name.get()
+        messagebox.showinfo("Menang WO", f"Pertandingan selesai, dimenangkan oleh tim {ao}!")
+
+    
+    def increment_blue(self):
+        score = int(self.blue_score.get()) + 1
+        self.blue_score.set(str(score))
+
+    def decrement_blue(self):
+        score = int(self.blue_score.get()) - 1
+        self.blue_score.set(str(score))
+
+    def increment_red(self):
+        score = int(self.red_score.get()) + 1
+        self.red_score.set(str(score))
+
+    def decrement_red(self):
+        score = int(self.red_score.get()) - 1
+        self.red_score.set(str(score))
