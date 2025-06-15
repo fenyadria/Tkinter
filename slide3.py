@@ -102,4 +102,10 @@ class Slide3(Frame):
         self.after(1000, self.countdown, count - 1)
       elif count < 0:
         self.running = False
-        self.done()  # Panggil done() otomatis saat waktu habis
+        self.done()
+
+    def start_timer(self):
+      if not self.running:
+            self.running = True
+            self.countdown(self.time_left)
+
