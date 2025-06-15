@@ -3,6 +3,12 @@ from slide1 import Slide1
 from slide2 import Slide2
 from slide3 import Slide3
 
+def initialize_csv():
+    if not os.path.exists('skor.csv'):
+        with open('skor.csv', mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(['Waktu', 'Tim Ao', 'Tim Aka', 'Divisi', 'Skor Ao', 'Skor Aka', 'Keterangan'])
+
 class AplikasiTkinter:
   def __init__(self, root):
     self.root = root
