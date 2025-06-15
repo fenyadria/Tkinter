@@ -8,10 +8,28 @@ class Slide3(Frame):
     self.controller = controller
     self.configure(bg="white")
 
-    subframe3 = Frame(self, background="black", height="80")
-    subframe3.pack(fill="x", side="top") 
+    topframe = Frame(self, background="black", height="80")
+    topframe.pack(fill="x", side="top") 
 
-    subframe4 = Frame(self, height="70", bg=self['bg'])
+    Label(topframe, text="Ao", fg='blue', bg='black', font=('Arial', 16, 'bold')).grid(row=1, column=0, padx=5, pady=5)
+    self.ao_name = Entry(topframe, width=15)
+    self.ao_name.insert(0, "input")
+    self.ao_name.grid(row=1, column=1, padx=10)
+
+    Label(topframe, text="Divisi :", fg='white', bg='black', font=('Arial', 16)).grid(row=1, column=3)
+    self.divisi_entry = Entry(topframe, width=15)
+    self.divisi_entry.insert(0, "input")
+    self.divisi_entry.grid(row=1, column=4, padx=10)
+
+    Label(topframe, text="Aka", fg='red', bg='black', font=('Arial', 16, 'bold')).grid(row=1, column=6)
+    self.aka_name = Entry(topframe, width=15)
+    self.aka_name.insert(0, "input")
+    self.aka_name.grid(row=1, column=7, padx=10)
+
+    Button(topframe, text="Close", bg='darkred', fg='white', font=('Arial', 12, 'bold'),
+    command=self.winfo_toplevel().quit).grid(row=0, column=10, rowspan=2, padx=10)
+
+    subframe4 = Frame(self, height="70", bg="white")
     subframe4.pack(fill="x", side="bottom")
 
     subframe = Frame(self, background="blue")
@@ -24,7 +42,7 @@ class Slide3(Frame):
                          command=lambda: controller.show_slide("Slide1"),
                          font=("Algerian", 15, "bold"),
                          bg="#5B2C2C", fg="white",
-                         activebackground="#0059b3", activeforeground="white"
+                         activebackground="#0059b3", activeforeground="white",
                          padx=0, pady=0, borderwidth=0, relief="flat")
     btn_kembali.pack(side="right", padx=30, pady=20)
 
