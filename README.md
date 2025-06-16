@@ -1,8 +1,8 @@
 # Tkinter
 Aplikasi ini adalah Papan skor digital interaktif yang kami buat menggunakan Python (Tkinter). Pada aplikasi ini terdapat tiga slide utama, yaitu :
-Slide 1: Welcome Page (halaman pembuka dengan animasi),
-Slide 2: Perkenalan Kelompok, dan
-Slide 3: Papan utama untuk skor.
+- Slide 1: Welcome Page (halaman pembuka dengan animasi),
+- Slide 2: Perkenalan Kelompok, dan
+- Slide 3: Papan utama untuk skor.
 Dengan interface yang bersih dan fitur kontrol lengkap, aplikasi ini bertujuan untuk mencatat dan menampilkan skor pertandingan secara real-time.
 
 Fitur utama :
