@@ -12,4 +12,4 @@ Fitur utama :
 - Terdapat pula tombol Next dan Back yang mudah digunakan, tombol-tombol ini  memungkinkan navigasi antar slide.
 
 Tampilan Interface (UI): 
-Terdapat dua sisi papan skor (Tim Ao biru dan Tim Aka merah) memiliki skor besar, tombol kontrol, dan bendera tim. Di awal tampilan, halaman pembuka dengan animasi teks memberikan kesan profesional. Mengenai Informasi anggota kelompok ditampilkan dalam slide perkenalan tim. Pada bagian Efek Hover pada tombol memberikan umpan balik visual dan meningkatkan interaksi pengguna.
+Terdapat dua sisi papan skor (Tim Ao biru dan Tim Aka merah) memiliki skor besar, tombol kontrol, dan bendera tim. Di awal tampilan, halaman pembuka dengan animasi teks memberikan kesan profesional. Mengenai Informasi anggota kelompok ditampilkan dalam slide perkenalan tim.
