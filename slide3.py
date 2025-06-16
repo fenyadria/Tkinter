@@ -28,7 +28,7 @@ class Slide3(Frame):
     self.aka_name.place(x=1300, y=35)
 
     Button(self.subframe3, text="Kembali", bg='darkred', fg='white',
-    font=('Arial', 12, 'bold'), command=lambda: controller.show_slide("Slide1")).place(x=1450, y=25)
+           font=('Arial', 12, 'bold'), command=lambda: controller.show_slide("Slide1")).place(x=1450, y=25)
 
     self.subframe4 = Frame(self, bg="white", height=70, width=1550)
     self.subframe4.place(x=0, y=730)
@@ -40,14 +40,22 @@ class Slide3(Frame):
 
     Button(self.subframe4, text='Done', font=('Arial', 14, 'bold'),
             bg='lightgreen', command=self.done).place(x=800, y=15)
+    
     Button(self.subframe4, text='Reset', font=('Arial', 14, 'bold'),
             bg='red', fg='white', command=self.reset).place(x=1450, y=12)
+
+    Button(self.subframe4, text='EXIT', font=('Arial', 14, 'bold'),
+                bg='red', fg='white', command=self.close_app).place(x=1450, y=12)
+    
     Button(self.subframe4, text='Shikakku', font=('Arial', 12),
             bg='navy', fg='white', command=self.shikakku_blue).place(x=300, y=15)
+    
     Button(self.subframe4, text='Kikken', font=('Arial', 12),
             bg='darkblue', fg='white', command=self.kikken_blue).place(x=400, y=15)
+    
     Button(self.subframe4, text='Shikakku', font=('Arial', 12),
             bg='darkred', fg='white', command=self.shikakku_red).place(x=1100, y=15)
+    
     Button(self.subframe4, text='Kikken', font=('Arial', 12),
             bg='firebrick', fg='white', command=self.kikken_red).place(x=1200, y=15)
 
